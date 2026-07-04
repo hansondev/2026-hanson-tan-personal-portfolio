@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Hanson Tan - Hanson Dev Portfolio</title>
+  <desc id="desc">Open graph preview image for Hanson Dev portfolio</desc>
+  <rect width="1200" height="630" fill="#112240"/>
+  <rect x="64" y="64" width="1072" height="502" rx="32" fill="#1a365d" stroke="#2d4a6f" stroke-width="4"/>
+  <rect x="96" y="96" width="220" height="56" rx="10" fill="#7bb5e3"/>
+  <text x="124" y="133" fill="#10233d" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Hanson Dev</text>
+  <text x="96" y="238" fill="#e8f1fb" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="800">Hanson Tan</text>
+  <text x="96" y="298" fill="#7bb5e3" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600">Portfolio for AI systems, marketing operations, and web delivery</text>
+  <line x1="96" y1="350" x2="552" y2="350" stroke="#2d4a6f" stroke-width="4"/>
+  <text x="96" y="408" fill="#e8f1fb" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="600">Production-ready web portfolio</text>
+  <text x="96" y="456" fill="#8ba3c7" font-family="Inter, Arial, sans-serif" font-size="24">Technical • Precise • AI-native</text>
+  <g transform="translate(762 122)">
+    <rect x="0" y="0" width="320" height="320" rx="24" fill="#112240" stroke="#2d4a6f" stroke-width="4"/>
+    <path d="M82 60h32v70h72V60h32v160h-32v-58h-72v58H82V60z" fill="#7bb5e3"/>
+    <path d="M210 108c0-17-14-31-31-31h-50v26h50c3 0 5 2 5 5v3c0 3-2 5-5 5h-50v26h50c3 0 5 2 5 5v3c0 3-2 5-5 5h-50v26h50c17 0 31-14 31-31v-13c0-7-3-14-8-19 5-5 8-12 8-19v-13z" fill="#e8f1fb" opacity="0.95"/>
+    <rect x="56" y="214" width="208" height="20" rx="10" fill="#2d4a6f"/>
+    <rect x="56" y="248" width="156" height="20" rx="10" fill="#2d4a6f"/>
+  </g>
+</svg>

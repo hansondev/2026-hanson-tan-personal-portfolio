@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Hanson Dev</title>
+  <desc id="desc">Square brand mark for Hanson Dev</desc>
+  <rect width="512" height="512" rx="72" fill="#112240"/>
+  <rect x="56" y="56" width="400" height="400" rx="56" fill="#1a365d" stroke="#2d4a6f" stroke-width="8"/>
+  <path d="M156 132h52v104h96V132h52v248h-52V284h-96v96h-52V132z" fill="#7bb5e3"/>
+  <path d="M346 200c0-25-20-45-45-45h-63v38h63c4 0 7 3 7 7v4c0 4-3 7-7 7h-63v38h63c4 0 7 3 7 7v4c0 4-3 7-7 7h-63v38h63c25 0 45-20 45-45v-20c0-11-4-21-11-29 7-8 11-18 11-29v-22z" fill="#e8f1fb" opacity="0.95"/>
+</svg>

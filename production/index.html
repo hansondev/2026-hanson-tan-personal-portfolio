@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanson Tan — Hanson Dev Portfolio</title>
+  <meta name="description" content="Hanson Tan's portfolio: expert software engineering, AI automation, performance marketing systems, and production-ready web development.">
+  <meta name="theme-color" content="#112240">
+  <link rel="canonical" href="https://hanson-portfolio.short.gy/2026-ai-style-portfolio">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hanson Tan — Hanson Dev Portfolio">
+  <meta property="og:description" content="Expert software engineering, AI automation, performance marketing systems, and production-ready web development.">
+  <meta property="og:site_name" content="Hanson Dev">
+  <meta property="og:url" content="https://hanson-portfolio.short.gy/2026-ai-style-portfolio">
+  <meta property="og:image" content="https://hanson-portfolio.short.gy/assets/og-image.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hanson Tan — Hanson Dev Portfolio">
+  <meta name="twitter:description" content="Expert software engineering, AI automation, performance marketing systems, and production-ready web development.">
+  <meta name="twitter:site" content="@boonhongtan">
+  <meta name="twitter:creator" content="@boonhongtan">
+  <meta name="twitter:image" content="https://hanson-portfolio.short.gy/assets/og-image.svg">
+  <meta name="author" content="Hanson Tan">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Hanson Tan",
+      "jobTitle": "Head of Marketing",
+      "description": "Software engineer and AI-powered marketing specialist.",
+      "url": "https://hanson-portfolio.short.gy/2026-ai-style-portfolio",
+      "sameAs": [
+        "https://linkedin.com/in/boonhongtan"
+      ]
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #112240;
+      --bg-card: #1a365d;
+      --bg-card-hover: #21426f;
+      --bg-alt: #143055;
+      --text: #e8f1fb;
+      --text-muted: #8ba3c7;
+      --text-dim: #6e89ad;
+      --accent: #7bb5e3;
+      --accent-light: #5a9bd5;
+      --accent-glow: rgba(123, 181, 227, 0.12);
+      --green: #7bb5e3;
+      --orange: #5a9bd5;
+      --pink: #7bb5e3;
+      --cyan: #5a9bd5;
+      --blue: #7bb5e3;
+      --border: #2d4a6f;
+      --radius: 6px;
+      --radius-lg: 6px;
+      --font: 'Inter', -apple-system, system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --max-w: 1200px;
+      --nav-h: 64px;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      background: var(--accent);
+      color: #10233d;
+      padding: 8px 12px;
+      border-radius: 6px;
+      z-index: 1000;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 16px; }
+    img { max-width: 100%; display: block; }
+    .img-gallery {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      margin: 12px 0;
+    }
+    .img-gallery.single { grid-template-columns: 1fr; }
+    .img-gallery.three { grid-template-columns: 1fr 1fr 1fr; }
+    .img-gallery img {
+      width: 100%; border-radius: 6px; cursor: pointer;
+      border: 1px solid var(--border);
+      transition: all 0.3s; object-fit: cover; height: 140px;
+    }
+    .img-gallery img:hover {
+      border-color: var(--accent);
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(123,181,227,0.2);
+    }
+    .img-caption {
+      font-size: 0.6rem; color: var(--text-dim);
+      text-align: center; margin-top: 2px; font-family: var(--mono);
+    }
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; z-index: 999;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.92);
+      align-items: center; justify-content: center;
+      padding: 40px; cursor: pointer;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox[aria-hidden="true"] { display: none; }
+    .lightbox img {
+      max-width: 90vw; max-height: 90vh;
+      border-radius: 8px; object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 30px;
+      color: #fff; font-size: 2rem; cursor: pointer;
+      font-family: var(--font); opacity: 0.6; transition: opacity 0.2s;
+      background: transparent; border: none;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      background: rgba(10,10,15,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+    }
+    nav .inner {
+      width: 100%; max-width: var(--max-w);
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    nav .logo { font-weight: 700; font-size: 1.05rem; color: #fff; }
+    nav .logo span { color: var(--accent); }
+    nav .links { display: flex; gap: 20px; align-items: center; }
+    nav .links a {
+      font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
+      transition: color 0.2s; position: relative;
+    }
+    nav .links a:hover, nav .links a.active { color: #fff; }
+    nav .links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: var(--accent); transform: scaleX(0);
+      transition: transform 0.2s; border-radius: 2px;
+    }
+    nav .links a:hover::after, nav .links a.active::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--accent); color: #fff !important; padding: 6px 16px;
+      border-radius: 6px; font-size: 0.78rem; font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--accent-light) !important; }
+    .nav-cta::after { display: none !important; }
+    .mobile-toggle {
+      display: none; background: none; border: none; color: #fff;
+      font-size: 1.5rem; cursor: pointer; padding: 4px;
+    }
+    .nav-badge {
+      background: rgba(123,181,227,0.12); color: var(--accent);
+      font-size: 0.6rem; font-weight: 600; padding: 2px 8px;
+      border-radius: 4px; margin-left: 4px; letter-spacing: 0.5px;
+    }
+
+    /* Sections */
+    section { padding: 80px 24px; }
+    section .inner { max-width: var(--max-w); margin: 0 auto; }
+    .section-label {
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+      color: var(--accent); text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 2rem; font-weight: 800; color: #fff;
+      margin-bottom: 12px; line-height: 1.2;
+    }
+    .section-desc {
+      color: var(--text-muted); font-size: 1rem;
+      max-width: 640px; margin-bottom: 40px;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: var(--nav-h); position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -40%; right: -15%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(123,181,227,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -30%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(90,155,213,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-cover {
+      position: absolute; bottom: 0; right: 0; max-width: 45%;
+      opacity: 0.06; pointer-events: none; z-index: 0;
+      object-fit: contain;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-glow); border: 1px solid rgba(123,181,227,0.3);
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 0.72rem; font-weight: 500; color: var(--accent-light);
+      margin-bottom: 18px; font-family: var(--mono);
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--green); border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .hero h1 {
+      font-size: 3.2rem; font-weight: 800; color: #fff;
+      line-height: 1.1; margin-bottom: 8px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-headline {
+      font-size: 0.95rem; color: var(--text-muted);
+      margin-bottom: 20px; font-family: var(--mono);
+      border-left: 3px solid var(--accent); padding-left: 16px;
+    }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--text-muted);
+      max-width: 500px; margin-bottom: 28px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 26px; border-radius: 6px;
+      font-weight: 600; font-size: 0.85rem; cursor: pointer;
+      transition: all 0.25s; border: none; font-family: var(--font);
+    }
+    .btn-primary {
+      background: var(--accent); color: #10233d;
+    }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(123,181,227,0.3); }
+    .btn-outline {
+      background: transparent; color: #fff; border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent; color: var(--text-muted); border: none;
+      padding: 8px 16px; font-family: var(--mono); font-size: 0.75rem;
+    }
+    .btn-ghost:hover { color: #fff; transform: translateY(-1px); }
+
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    .stat-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px;
+      transition: all 0.3s;
+    }
+    .stat-card:hover { background: var(--bg-card-hover); border-color: var(--accent); transform: translateY(-2px); }
+    .stat-number {
+      font-size: 1.8rem; font-weight: 800; color: #fff;
+      font-family: var(--mono); line-height: 1.1;
+    }
+    .stat-number .accent { color: var(--accent-light); }
+    .stat-number .green { color: var(--accent); }
+    .stat-number .orange { color: var(--accent-light); }
+    .stat-number .pink { color: var(--accent); }
+    .stat-number .cyan { color: var(--accent-light); }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+    .stat-detail { font-size: 0.65rem; color: var(--text-dim); margin-top: 2px; font-family: var(--mono); }
+
+    /* About */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      align-items: start;
+    }
+    .about-text p { color: var(--text-muted); margin-bottom: 14px; font-size: 0.92rem; }
+    .about-text p strong { color: var(--text); }
+    .about-highlights {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px;
+    }
+    .about-highlight {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .about-highlight .dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* Skills */
+    .skills-section { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 14px;
+    }
+    .skill-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px;
+      transition: all 0.3s;
+    }
+    .skill-card:hover { background: var(--bg-card-hover); border-color: var(--accent); transform: translateY(-2px); }
+    .skill-card h3 {
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .skill-tags span {
+      background: rgba(123,181,227,0.08); border: 1px solid rgba(123,181,227,0.18);
+      padding: 3px 9px; border-radius: 6px;
+      font-size: 0.7rem; color: var(--accent-light); font-weight: 500;
+      transition: all 0.2s;
+    }
+    .skill-tags span:hover { background: rgba(123,181,227,0.2); }
+
+    /* Category Tabs */
+    .category-nav {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .category-btn {
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 8px 18px; border-radius: 8px;
+      color: var(--text-muted); font-size: 0.78rem; font-weight: 500;
+      cursor: pointer; transition: all 0.25s; font-family: var(--font);
+    }
+    .category-btn:hover { border-color: var(--accent); color: #fff; }
+    .category-btn.active {
+      background: var(--accent); border-color: var(--accent); color: #fff;
+    }
+
+    /* Projects */
+    .projects-grid { display: none; gap: 20px; }
+    .projects-grid.active { display: grid; }
+    .projects-grid.all { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+    .project-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: all 0.4s; position: relative; overflow: hidden;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); border-color: var(--accent); }
+    .project-number {
+      font-family: var(--mono); font-size: 0.65rem; color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+    .project-card h3 {
+      font-size: 1.05rem; font-weight: 700; color: #fff;
+      margin-bottom: 6px; line-height: 1.3;
+    }
+    .project-card .problem {
+      font-size: 0.78rem; color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .project-card .problem strong { color: var(--orange); font-weight: 500; }
+    .project-card p {
+      color: var(--text-muted); font-size: 0.84rem; line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .project-tech {
+      display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto;
+    }
+    .project-tech span {
+      background: rgba(123,181,227,0.06); border: 1px solid rgba(123,181,227,0.12);
+      padding: 2px 8px; border-radius: 4px;
+      font-size: 0.62rem; color: var(--text-muted); font-family: var(--mono);
+    }
+    .project-category-badge {
+      display: inline-block;
+      font-size: 0.55rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.8px; padding: 2px 8px; border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .badge-content { background: rgba(123,181,227,0.12); color: var(--accent); }
+    .badge-data { background: rgba(123,181,227,0.12); color: var(--accent-light); }
+    .badge-agent { background: rgba(90,155,213,0.12); color: var(--accent); }
+
+    /* Timeline */
+    .timeline { position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px; background: var(--border);
+    }
+    .timeline-item {
+      position: relative; padding-left: 40px; padding-bottom: 44px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -5px; top: 4px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 3px solid var(--bg);
+    }
+    .timeline-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 6px; margin-bottom: 6px;
+    }
+    .timeline-company { font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .timeline-role { color: var(--accent-light); font-weight: 500; font-size: 0.85rem; }
+    .timeline-date {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--text-muted); padding: 3px 10px;
+      background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border);
+    }
+    .timeline-body { margin-top: 6px; }
+    .timeline-body li {
+      color: var(--text-muted); font-size: 0.85rem;
+      margin-bottom: 5px; list-style: none; padding-left: 0;
+    }
+    .timeline-body li::before { content: '▸ '; color: var(--accent); }
+    .timeline-body li strong { color: var(--text); }
+
+    /* Results */
+    .results-section { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .results-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 18px;
+    }
+    .result-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: all 0.4s; position: relative; overflow: hidden;
+    }
+    .result-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .result-card:hover::before { transform: scaleX(1); }
+    .result-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); border-color: var(--accent); }
+    .result-icon { font-size: 1.3rem; margin-bottom: 10px; display: block; }
+    .result-card h3 {
+      font-size: 1.4rem; font-weight: 800; color: #fff;
+      margin-bottom: 4px; line-height: 1.2;
+    }
+    .result-card h3 .green { color: var(--green); }
+    .result-card h3 .accent { color: var(--accent-light); }
+    .result-card .sub {
+      font-size: 0.72rem; color: var(--text-dim); font-family: var(--mono);
+      margin-bottom: 10px;
+    }
+    .result-card p {
+      color: var(--text-muted); font-size: 0.84rem; line-height: 1.6;
+    }
+
+    /* Contact */
+    .contact-section {
+      background: var(--bg-card); border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .contact-section .section-desc { margin-left: auto; margin-right: auto; }
+    .contact-links {
+      display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .contact-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 28px;
+      display: flex; align-items: center; gap: 10px;
+      transition: all 0.3s;
+    }
+    .contact-card:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-2px); }
+    .contact-card .icon { font-size: 1.1rem; }
+    .contact-card .label { font-size: 0.68rem; color: var(--text-muted); }
+    .contact-card .value { font-size: 0.85rem; color: #fff; font-weight: 500; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 28px 24px;
+      color: var(--text-dim); font-size: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Category section header */
+    .category-section { margin-bottom: 40px; }
+    .category-section:last-child { margin-bottom: 0; }
+    .category-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 18px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .category-header h3 {
+      font-size: 1.1rem; font-weight: 700; color: #fff;
+    }
+    .category-header .count {
+      font-size: 0.7rem; color: var(--text-dim);
+      font-family: var(--mono); background: var(--bg-card);
+      padding: 2px 10px; border-radius: 100px; border: 1px solid var(--border);
+    }
+    .category-cards {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 16px;
+    }
+
+    /* Video placeholder */
+    .video-placeholder {
+      background: var(--bg-alt); border: 1px dashed var(--border);
+      border-radius: 8px; padding: 12px 16px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; color: var(--text-dim);
+      margin: 10px 0;
+    }
+    .video-placeholder .play-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--accent-glow); border: 1px solid rgba(123,181,227,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--accent-light); flex-shrink: 0;
+    }
+
+    /* Experience section header */
+    .experience-section { background: var(--bg); }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Print Optimization */
+    @media print {
+      nav { display: none; }
+      .hero { min-height: auto; padding-top: 40px; }
+      .hero::before, .hero::after { display: none; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .project-card:hover, .result-card:hover, .stat-card:hover, .skill-card:hover, .contact-card:hover {
+        transform: none !important;
+        background: var(--bg-card) !important;
+        border-color: var(--border) !important;
+      }
+      .project-card::before, .result-card::before { display: none; }
+      section { padding: 30px 20px; break-inside: avoid; }
+      .hero-grid { gap: 24px; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .stat-number { font-size: 1.4rem; }
+      .category-cards { grid-template-columns: 1fr 1fr; }
+      .projects-grid.all { grid-template-columns: 1fr 1fr; }
+      .section-title { font-size: 1.5rem; }
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .results-grid { grid-template-columns: 1fr 1fr; }
+      .contact-links { flex-wrap: wrap; }
+      .img-gallery img { height: auto; break-inside: avoid; }
+      .img-gallery { break-inside: avoid; }
+      .category-nav { display: none; }
+      .projects-grid.all { display: grid !important; }
+      .category-btn { display: none; }
+      .category-section { break-inside: avoid; page-break-inside: avoid; }
+      .timeline-item { break-inside: avoid; }
+      .result-card { break-inside: avoid; }
+      body { background: #fff !important; color: #000 !important; }
+      .project-card, .result-card, .stat-card, .skill-card, .contact-card, .timeline-item::before, .skill-card, .section-label {
+        background: #f5f5f5 !important; color: #000 !important;
+      }
+      .section-title, .hero h1, h3, .timeline-company, .stat-number {
+        color: #000 !important;
+      }
+      .project-card p, .result-card p, .about-text p, .section-desc, .hero-sub, .stat-label, .stat-detail, .timeline-body li, .skill-tags span, .contact-card .value {
+        color: #444 !important;
+      }
+      .project-card, .result-card, .stat-card, .skill-card, .contact-card {
+        border-color: #ddd !important;
+      }
+      .project-card h3, .result-card h3, .skill-card h3 { color: #000 !important; }
+      .project-tech span { background: #eee !important; border-color: #ddd !important; color: #555 !important; }
+      .hero h1 span { -webkit-text-fill-color: #000; background: none; }
+      .hero-headline { border-left-color: var(--accent); }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-headline { font-size: 0.85rem; }
+      .hero-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .about-grid { grid-template-columns: 1fr; gap: 20px; }
+      .about-highlights { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .category-cards { grid-template-columns: 1fr; }
+      .projects-grid.all { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .contact-links { flex-direction: column; align-items: center; }
+      section { padding: 50px 18px; }
+      .section-title { font-size: 1.4rem; }
+      nav .links { display: none; }
+      nav .links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: var(--nav-h); left: 0; right: 0;
+        background: rgba(10,10,15,0.98);
+        backdrop-filter: blur(16px);
+        padding: 16px 24px; border-bottom: 1px solid var(--border);
+        gap: 14px;
+      }
+      .mobile-toggle { display: block; }
+      .nav-cta { align-self: flex-start; }
+      .timeline-item { padding-left: 28px; }
+      .category-nav { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+      .category-btn { white-space: nowrap; flex-shrink: 0; }
+    }
+    @media (max-width: 480px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .stat-number { font-size: 1.5rem; }
+      .about-highlights { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#summary">Skip to content</a>
+
+<nav>
+  <div class="inner">
+    <div class="logo">Hanson<span>.</span>Tan</div>
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="primary-navigation" aria-expanded="false" onclick="const primaryNav = document.getElementById('primary-navigation'); const isOpen = primaryNav.classList.toggle('open'); this.setAttribute('aria-expanded', String(isOpen));">☰</button>
+    <div class="links" id="primary-navigation">
+      <a href="#summary">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Career</a>
+      <a href="#results">Results</a>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="inner">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">Available for Head of Marketing / AI Marketing Lead roles</div>
+        <h1>
+          AI-Powered<br>
+          <span>Full-Stack</span><br>
+          Digital Marketing Lead
+        </h1>
+        <div class="hero-headline">
+          I build production systems for attribution, content, reporting, and bidding.
+        </div>
+        <p class="hero-sub">
+          <strong>15 production systems</strong> from concept to delivery.
+          9+ years across Meta, TikTok, LinkedIn, and Google.
+          <strong>1819.7% ROAS.</strong> $60K+ monthly spend.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View Projects ↓</a>
+          <a href="#contact" class="btn btn-outline">Let's Talk</a>
+          <a href="#results" class="btn btn-outline">Key Results</a>
+          <span class="btn btn-outline" aria-disabled="true" title="Source PDF not included in this repository">Original PDF unavailable</span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number accent">1819.7<small style="font-size:0.45em;color:var(--text-dim);">%</small></div>
+          <div class="stat-label">Peak ROAS (Healthcare &amp; Wellness)</div>
+          <div class="stat-detail">MYR 330K+ sales · MYR 18K/mo spend</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number green">15</div>
+          <div class="stat-label">AI Marketing Automation Projects</div>
+          <div class="stat-detail">Content · Data · Agent Systems</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number orange">$60K<small style="font-size:0.45em;color:var(--text-dim);">+</small></div>
+          <div class="stat-label">Monthly Ad Spend Managed</div>
+          <div class="stat-detail">Meta · TikTok · LinkedIn · Google</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number pink">9+<small style="font-size:0.45em;color:var(--text-dim);"> yrs</small></div>
+          <div class="stat-label">Cross-Channel Marketing Experience</div>
+          <div class="stat-detail">B2B SaaS · Healthcare · E-com · Fintech</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Summary -->
+<section id="summary">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">Professional Summary</div>
+        <h2 class="section-title">Strategy, code, and AI systems</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a <strong>Full-Stack Digital Marketing Specialist</strong> who bridges performance marketing with AI automation.
+          I build the growth engine: conversion tracking infrastructure, server-side CAPI setups,
+          AI-powered audience segmentation, automated reporting, and multi-platform bidding strategies.
+        </p>
+        <p>
+          Currently <strong>Head of Marketing</strong> at Novaticom Global, leading AI-driven initiatives and building
+          marketing systems and teams. Previously delivered <strong>1819.7% ROAS</strong> for a Healthcare &amp; Wellness
+          client at Zimi Tech, managing $60K+ monthly ad spend across 4 platforms.
+        </p>
+        <p>
+          <strong>My edge:</strong> I write code, build AI agents, and architect martech stacks.
+          From N8N automation workflows to custom LLM agents with RAG pipelines, I treat marketing as a systems problem.
+        </p>
+      </div>
+      <div class="about-text reveal">
+        <div style="font-family:var(--mono);font-size:0.82rem;color:var(--accent-light);margin-bottom:14px;border:1px solid var(--border);border-radius:8px;padding:12px 16px;background:var(--bg-card);">
+          // Technical. Precise. AI-native.
+        </div>
+        <div class="about-highlights">
+          <div class="about-highlight"><span class="dot" style="background:var(--accent);"></span> B2B SaaS Marketing</div>
+          <div class="about-highlight"><span class="dot" style="background:var(--green);"></span> Healthcare &amp; Wellness</div>
+          <div class="about-highlight"><span class="dot" style="background:var(--orange);"></span> E-commerce Growth</div>
+          <div class="about-highlight"><span class="dot" style="background:var(--pink);"></span> Fintech &amp; EdTech</div>
+          <div class="about-highlight"><span class="dot" style="background:var(--cyan);"></span> AI Agent Infrastructure</div>
+          <div class="about-highlight"><span class="dot" style="background:var(--blue);"></span> Marketing Automation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="skills-section">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">Core Capabilities</div>
+      <h2 class="section-title">Full Growth Stack</h2>
+      <p class="section-desc">End-to-end capability across ad ops, tracking, automation, and full-stack web delivery.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>AI &amp; Marketing Automation</h3>
+        <div class="skill-tags">
+          <span>N8N</span><span>Make.com</span><span>ActivePieces</span><span>Flowise</span>
+          <span>Langflow</span><span>Custom AI Agents</span><span>Google ADK</span>
+          <span>AgentZero</span><span>RAG Pipelines</span><span>MCP Servers</span>
+          <span>Prompt Engineering</span><span>Vector DBs</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Performance Marketing</h3>
+        <div class="skill-tags">
+          <span>Meta Ads</span><span>TikTok Ads</span><span>LinkedIn Ads</span>
+          <span>Google Ads</span><span>Bing Ads</span><span>YouTube Ads</span>
+          <span>DV360</span><span>Taboola</span><span>Outbrain</span><span>StackAdapt</span>
+          <span>Nexxen</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Analytics &amp; Tracking</h3>
+        <div class="skill-tags">
+          <span>GA4</span><span>GTM</span><span>BigQuery</span><span>Meta CAPI</span>
+          <span>Google CAPI</span><span>LinkedIn CAPI</span><span>PostHog</span>
+          <span>ClickHouse</span><span>Metabase</span><span>Piwik Pro</span>
+          <span>AppsFlyer</span><span>Power BI</span><span>Looker Studio</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>SEO &amp; Content</h3>
+        <div class="skill-tags">
+          <span>Ahrefs</span><span>SEMRush</span><span>DataForSEO API</span>
+          <span>Schema JSON-LD</span><span>Google Search Console</span>
+          <span>AI Content Strategy</span><span>GEO</span><span>AEO</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>CRM &amp; Email</h3>
+        <div class="skill-tags">
+          <span>HubSpot</span><span>Zoho</span><span>Pipedrive</span><span>Mailchimp</span>
+          <span>Brevo</span><span>SendGrid</span><span>Mailgun</span><span>ActiveCampaign</span>
+          <span>SugarCRM</span><span>TwentyCRM</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Web &amp; Infrastructure</h3>
+        <div class="skill-tags">
+          <span>WordPress</span><span>Webflow</span><span>Strapi</span><span>Next.js</span>
+          <span>React</span><span>Node.js</span><span>Python</span><span>MySQL</span>
+          <span>PostgreSQL</span><span>Supabase</span><span>Firebase</span>
+          <span>Docker</span><span>Coolify</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>AI Agentic Tools</h3>
+        <div class="skill-tags">
+          <span>Cursor</span><span>Claude Code</span><span>Codex</span><span>OpenCode</span>
+          <span>OpenAI APIs</span><span>Anthropic APIs</span><span>Gemini APIs</span>
+          <span>DeepSeek APIs</span><span>OpenRouter</span><span>Kimi API</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Creative &amp; Design</h3>
+        <div class="skill-tags">
+          <span>Figma</span><span>Penpot</span><span>AI Image Gen</span><span>Flux</span>
+          <span>GPT Image-1</span><span>Gemini</span><span>Veo3</span><span>Wan2.5</span>
+          <span>Copywriting</span><span>Content Strategy</span><span>CRO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Projects -->
+<section id="projects">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">AI Automation Projects</div>
+      <h2 class="section-title">15 Production-Ready AI Marketing Systems</h2>
+      <p class="section-desc">
+        End-to-end AI agents and automation workflows built with N8N, custom LLM integrations, and modern tech stacks.
+        Every system was designed for production use — not proof-of-concept.
+      </p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="category-nav reveal">
+      <button class="category-btn active" data-filter="all">All Projects</button>
+      <button class="category-btn" data-filter="content">Content &amp; Creative AI</button>
+      <button class="category-btn" data-filter="data">Data &amp; Paid Media AI</button>
+      <button class="category-btn" data-filter="agent">Agent Infrastructure</button>
+    </div>
+
+    <!-- All Projects View -->
+    <div class="projects-grid all active" id="projects-all">
+
+      <!-- CATEGORY A: Content & Creative AI -->
+      <div class="category-section">
+        <div class="category-header">
+          <span class="project-category-badge badge-content">Content &amp; Creative AI</span>
+          <span class="count">6 projects</span>
+        </div>
+        <div class="category-cards">
+
+          <div class="project-card" data-category="content">
+            <div class="project-number">#01</div>
+            <div class="project-category-badge badge-content">Content AI</div>
+            <h3>Social Media AI Content Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Manual FB content planning across multiple client accounts — inconsistent posting, labor-intensive research.</div>
+            <p>AI agent that scrapes historical FB posts, analyzes top-performing content patterns, and generates a full month of platform-optimized social posts with captions, hashtags, and optimal posting schedules.</p>
+            <div class="img-gallery three">
+              <div><img src="portfolio_media/page2_X5.jpg" alt="FB scraping N8N workflow" loading="lazy"><div class="img-caption">FB scrape → AI pipeline</div></div>
+              <div><img src="portfolio_media/page3_X8.jpg" alt="FB content planner AI agent" loading="lazy"><div class="img-caption">Content planner agent</div></div>
+              <div><img src="portfolio_media/page4_X12.jpg" alt="Competitor scraping & FB Ads library" loading="lazy"><div class="img-caption">Competitor analysis</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>FB Graph API</span><span>OpenAI</span><span>LLM</span><span>Automation</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="content">
+            <div class="project-number">#02</div>
+            <div class="project-category-badge badge-content">Content AI</div>
+            <h3>Video Sales Letter (VSL) AI Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Crafting multiple VSL angles for ad creative testing is time-consuming and resource-intensive.</div>
+            <p>AI system that generates multiple video script angles and VSL variations from a single brief. Handles different hooks, pacing, and audience segments — ready for production recording.</p>
+            <div class="img-gallery three">
+              <div><img src="portfolio_media/page5_X15.jpg" alt="VSL generator N8N workflow" loading="lazy"><div class="img-caption">VSL generation workflow</div></div>
+              <div><img src="portfolio_media/page6_X18.jpg" alt="VSL AI workflow" loading="lazy"><div class="img-caption">Multi VSL pipeline</div></div>
+              <div><img src="portfolio_media/page6_X19.jpg" alt="Multiple VSL script output" loading="lazy"><div class="img-caption">Generated VSL scripts</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>LLM</span><span>OpenAI</span><span>Script Templates</span><span>Automation</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="content">
+            <div class="project-number">#03</div>
+            <div class="project-category-badge badge-content">Content AI</div>
+            <h3>Automated Social Media Scheduling System</h3>
+            <div class="problem"><strong>Problem:</strong> Manual post scheduling across platforms requires UI interaction — no automation bridge between content generation and publishing.</div>
+            <p>Headless social media scheduler that bypasses UI dependencies. AI-generated content is automatically queued, formatted per platform, and published on schedule — zero manual intervention.</p>
+            <div class="img-gallery">
+              <div><img src="portfolio_media/page7_X22.jpg" alt="Auto scheduling N8N workflow" loading="lazy"><div class="img-caption">Scheduling automation workflow</div></div>
+              <div><img src="portfolio_media/page7_X23.jpg" alt="Scheduling without UI" loading="lazy"><div class="img-caption">Headless scheduling config</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>API Integration</span><span>Webhooks</span><span>Social APIs</span><span>Cron</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="content">
+            <div class="project-number">#04</div>
+            <div class="project-category-badge badge-content">Content AI</div>
+            <h3>Multi AI Agent Ad Copies Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Creating platform-specific ad copy at scale across Meta, Google, LinkedIn, and TikTok — each with unique format, character limits, and tone requirements.</div>
+            <p>Orchestrates multiple specialized AI agents — each agent handles a specific platform's copy requirements. Generates headlines, primary text, CTAs, and ad extensions tailored to each ad platform's specifications.</p>
+            <div class="img-gallery three">
+              <div><img src="portfolio_media/page8_X26.jpg" alt="Multi AI agents workflow" loading="lazy"><div class="img-caption">Multi-agent orchestration</div></div>
+              <div><img src="portfolio_media/page9_X31.jpg" alt="Ad copies generator output" loading="lazy"><div class="img-caption">Generated ad copies</div></div>
+              <div><img src="portfolio_media/page9_X32.jpg" alt="Multi-agent ad copy output" loading="lazy"><div class="img-caption">Platform-specific output</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>Multi-Agent</span><span>LLM</span><span>Platform APIs</span><span>Prompt Chains</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="content">
+            <div class="project-number">#07</div>
+            <div class="project-category-badge badge-content">Content AI</div>
+            <h3>AI Landing Page Content Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Creating landing page content from structured data requires manual copywriting — slow, inconsistent, and hard to scale.</div>
+            <p>Reads structured data from Sheets databases, generates optimized landing page content through AI, and syncs directly to the CMS/CRM — creating a structured data → AI content → live page pipeline.</p>
+            <div class="img-gallery">
+              <div><img src="portfolio_media/page13_X45.jpg" alt="Landing page content workflow" loading="lazy"><div class="img-caption">Sheet → AI → CMS pipeline</div></div>
+              <div><img src="portfolio_media/page13_X46.jpg" alt="Content sync to CRM" loading="lazy"><div class="img-caption">AI content → CRM sync</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>Google Sheets</span><span>CMS API</span><span>LLM</span><span>CRM</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="content">
+            <div class="project-number">#08</div>
+            <div class="project-category-badge badge-content">Content AI</div>
+            <h3>AI Product Showcasing Image Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Producing high-quality product showcase images for ads requires designers, stock photography, or expensive photoshoots.</div>
+            <p>AI agent analyzes product images, generates optimized image prompts, and uses Google Gemini Flash 2.5-Image to produce stunning product showcase visuals — for ads, social media, and landing pages.</p>
+            <div class="img-gallery three">
+              <div><img src="portfolio_media/page14_X49.jpg" alt="Product image gen workflow" loading="lazy"><div class="img-caption">Image generation workflow</div></div>
+              <div><img src="portfolio_media/page14_X50.jpg" alt="AI product image prompt" loading="lazy"><div class="img-caption">AI prompt generation</div></div>
+              <div><img src="portfolio_media/page15_X53.jpg" alt="Generated product showcase" loading="lazy"><div class="img-caption">Generated product image</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>Gemini API</span><span>Image Analysis</span><span>Prompt Gen</span><span>Automation</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CATEGORY B: Data & Paid Media AI -->
+      <div class="category-section">
+        <div class="category-header">
+          <span class="project-category-badge badge-data">Data &amp; Paid Media AI</span>
+          <span class="count">5 projects</span>
+        </div>
+        <div class="category-cards">
+
+          <div class="project-card" data-category="data">
+            <div class="project-number">#06</div>
+            <div class="project-category-badge badge-data">Data AI</div>
+            <h3>PDF Text Extraction for Knowledge Base (RAG)</h3>
+            <div class="problem"><strong>Problem:</strong> Unstructured PDF documents contain valuable data locked in non-machine-readable formats — impossible to use for AI training or retrieval.</div>
+            <p>Uses Mistral AI OCR to extract text from PDFs, transforms unstructured data into structured vector embeddings, and feeds into a RAG pipeline for LLM-based knowledge retrieval — enabling AI agents to answer questions from document sources.</p>
+            <div class="img-gallery">
+              <div><img src="portfolio_media/page11_X39.jpg" alt="PDF extraction to vector workflow" loading="lazy"><div class="img-caption">PDF → Vector pipeline</div></div>
+              <div><img src="portfolio_media/page12_X42.jpg" alt="Knowledge vector ingestion" loading="lazy"><div class="img-caption">Vector ingestion process</div></div>
+            </div>
+            <div class="project-tech">
+              <span>Mistral OCR</span><span>Vector DB</span><span>RAG</span><span>N8N</span><span>Embeddings</span><span>LLM</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="data">
+            <div class="project-number">#10</div>
+            <div class="project-category-badge badge-data">SEO AI</div>
+            <h3>Full-Stack AI SEO Blog Content Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Producing SEO-optimized long-form blog content (>5,000 words) with proper keyword research, topic clustering, and structured content — manually takes days per article.</div>
+            <p>End-to-end AI blogging system: keyword research with variation generation → topic clustering (pillar/subpage) → SEO metadata creation → full article generation in sections → conclusion + key takeaways. Production-ready markdown output.</p>
+            <div class="img-gallery three">
+              <div><img src="portfolio_media/page17_X60.jpg" alt="SEO blog generation workflow" loading="lazy"><div class="img-caption">Keyword research + variations</div></div>
+              <div><img src="portfolio_media/page18_X63.jpg" alt="Topic clustering" loading="lazy"><div class="img-caption">Topic clustering engine</div></div>
+              <div><img src="portfolio_media/page19_X68.jpg" alt="Full blog creation mode" loading="lazy"><div class="img-caption">Full blog generation flow</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>SEO APIs</span><span>LLM</span><span>Keyword Research</span><span>Markdown</span><span>Topic Clustering</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="data">
+            <div class="project-number">#11</div>
+            <div class="project-category-badge badge-data">Google Ads AI</div>
+            <h3>Google Ads Keyword Research + Filtering + Segmentation</h3>
+            <div class="problem"><strong>Problem:</strong> Manual keyword research across Google Ads accounts is slow — surfacing high-intent keywords with proper grouping takes hours of analysis.</div>
+            <p>Multi-agent system that connects to Google Ads API for campaign performance analysis, pulls Keyword Planner data, and uses LLM reasoning to filter and segment keywords into Ad Group-ready clusters — with semantic grouping based on search intent.</p>
+            <div class="img-gallery three">
+              <div><img src="portfolio_media/page23_X80.jpg" alt="Keyword planner report" loading="lazy"><div class="img-caption">Keyword Planner analysis</div></div>
+              <div><img src="portfolio_media/page24_X84.jpg" alt="Keyword research workflow" loading="lazy"><div class="img-caption">Research + filtering pipeline</div></div>
+              <div><img src="portfolio_media/page25_X88.jpg" alt="Keyword segmentation" loading="lazy"><div class="img-caption">LLM-segmented groups</div></div>
+            </div>
+            <div class="project-tech">
+              <span>Google Ads API</span><span>N8N</span><span>LLM</span><span>Keyword Planner</span><span>Segmentation</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="data">
+            <div class="project-number">#12</div>
+            <div class="project-category-badge badge-data">Google Ads AI</div>
+            <h3>Google Ads Campaign Media Plan Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Creating RSA ad copies at scale — multiple headlines, descriptions, and CTAs per Ad Group — is repetitive and easy to overlook optimization opportunities.</div>
+            <p>AI agent generates Google Ads RSA ad copies based on funnel level and keyword groupings. Produces multiple headline/description combinations per Ad Group, ensuring full RSA ad strength compliance and A/B testing readiness.</p>
+            <div class="img-gallery single">
+              <div><img src="portfolio_media/page26_X91.jpg" alt="RSA ad copies generation" loading="lazy"><div class="img-caption">RSA ad copies with AI agent</div></div>
+            </div>
+            <div class="project-tech">
+              <span>Google Ads API</span><span>N8N</span><span>LLM</span><span>RSA</span><span>Funnel Strategy</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="data">
+            <div class="project-number">#13</div>
+            <div class="project-category-badge badge-data">Landing Page AI</div>
+            <h3>Landing Page Sections Content Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Generating structured content for landing page sections — from JSON data structure to production-ready HTML — requires manual handoff between strategy, copy, and dev teams.</div>
+            <p>Multi-agent system that generates multiple versions of landing page section segmentation, creates JSON-structured content for each section, and produces production-ready HTML — bridging the gap between content strategy and development.</p>
+            <div class="img-gallery">
+              <div><img src="portfolio_media/page27_X94.jpg" alt="Section segmentation" loading="lazy"><div class="img-caption">Section segmentation</div></div>
+              <div><img src="portfolio_media/page28_X98.jpg" alt="JSON to HTML output" loading="lazy"><div class="img-caption">Generated HTML sections</div></div>
+            </div>
+            <div class="project-tech">
+              <span>N8N</span><span>JSON</span><span>HTML</span><span>LLM</span><span>Multi-Agent</span><span>CMS</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CATEGORY C: Agent Infrastructure -->
+      <div class="category-section">
+        <div class="category-header">
+          <span class="project-category-badge badge-agent">Agent Infrastructure</span>
+          <span class="count">4 projects</span>
+        </div>
+        <div class="category-cards">
+
+          <div class="project-card" data-category="agent">
+            <div class="project-number">#05</div>
+            <div class="project-category-badge badge-agent">Agent AI</div>
+            <h3>AI Agent Google Slide Report Generator</h3>
+            <div class="problem"><strong>Problem:</strong> Monthly campaign reporting is manual — extracting data, building slides, and formatting decks consumes days per cycle.</div>
+            <p>AI agent that extracts campaign data from Google Sheets, transforms it through JSON data structures, and auto-generates formatted Google Slide decks with charts, metrics, and narrative insights — reducing reporting time by 90%.</p>
+            <div class="img-gallery">
+              <div><img src="portfolio_media/page10_X35.jpg" alt="Slide report generator workflow" loading="lazy"><div class="img-caption">Sheet → JSON → Slides pipeline</div></div>
+              <div><img src="portfolio_media/page10_X36.jpg" alt="Generated slide report" loading="lazy"><div class="img-caption">Auto-generated campaign report</div></div>
+            </div>
+            <div class="project-tech">
+              <span>Google Slides API</span><span>Google Sheets</span><span>N8N</span><span>JSON</span><span>LLM</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="agent">
+            <div class="project-number">#09</div>
+            <div class="project-category-badge badge-agent">Conversational AI</div>
+            <h3>WhatsApp Conversational AI Agent Chatbot</h3>
+            <div class="problem"><strong>Problem:</strong> Customer inquiries after-hours and at scale — human agents can't cover 24/7, FAQ chatbots lack true conversational intelligence.</div>
+            <p>Production-ready WhatsApp AI agent with dynamic conversation workflows. Ingests knowledge base data into vector store, enables semantic search for LLM-powered responses, and handles multiple message formats — from FAQs to complex sales inquiries. Functions as a virtual assistant or AI sales agent.</p>
+            <div class="img-gallery">
+              <div><img src="portfolio_media/page16_X56.jpg" alt="WhatsApp AI agent workflow" loading="lazy"><div class="img-caption">Dynamic conversation workflow</div></div>
+              <div><img src="portfolio_media/page16_X57.jpg" alt="WhatsApp agent conversation" loading="lazy"><div class="img-caption">WA → AI Agent → WA flow</div></div>
+            </div>
+            <div class="project-tech">
+              <span>WhatsApp API</span><span>Vector DB</span><span>RAG</span><span>N8N</span><span>LLM</span><span>Semantic Search</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="agent">
+            <div class="project-number">#14</div>
+            <div class="project-category-badge badge-agent">Agent Infrastructure</div>
+            <h3>Full Landing Page / Website Generation (Claude Code CLI + MCP + Agent Skills)</h3>
+            <div class="problem"><strong>Problem:</strong> Building landing pages and websites from briefs requires weeks of development — design, copy, coding, testing, and deployment.</div>
+            <p>Agentic coding system using Claude Code CLI with MCP servers and custom agent skills to generate complete, production-ready landing pages and websites from natural language briefs. Full HTML/CSS/JS output with responsive design and performance optimization.</p>
+            <div class="img-gallery single">
+              <div><img src="portfolio_media/page29_X102.jpg" alt="Claude Code landing page generation" loading="lazy"><div class="img-caption">Claude Code CLI + MCP agentic coding</div></div>
+            </div>
+            <div class="project-tech">
+              <span>Claude Code</span><span>MCP</span><span>Agent Skills</span><span>CLI</span><span>HTML/CSS/JS</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="agent">
+            <div class="project-number">#15</div>
+            <div class="project-category-badge badge-agent">Agent Infrastructure</div>
+            <h3>Interactive Agentic UI Chat for Google Ads Insights</h3>
+            <div class="problem"><strong>Problem:</strong> Campaign performance data is locked inside Google Ads UI — getting specific answers requires navigating multiple screens and reports.</div>
+            <p>Self-built interactive agentic UI that connects to Google Ads API, enabling natural language queries for campaign insights. Ask "Which campaigns dropped in CTR last week?" or "Show me my top-performing ad groups by conversions" — the AI fetches, analyzes, and presents the data conversationally.</p>
+            <div class="img-gallery single">
+              <div><img src="portfolio_media/page29_X103.jpg" alt="Agentic UI for Google Ads insights" loading="lazy"><div class="img-caption">Conversational Google Ads insights</div></div>
+            </div>
+            <div class="project-tech">
+              <span>Google Ads API</span><span>N8N</span><span>Agentic UI</span><span>LLM</span><span>Real-time Data</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="experience-section">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Experience Timeline</h2>
+      <p class="section-desc">Progressive leadership across agencies, tech companies, and freelance — spanning Malaysia, Singapore, and the Philippines.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">Novaticom Global Ltd.</div>
+            <div class="timeline-role">Head of Marketing</div>
+          </div>
+          <div class="timeline-date">Jan 2026 — Present</div>
+        </div>
+        <ul class="timeline-body">
+          <li>Leading <strong>AI-driven marketing initiatives</strong>, building and supervising the internal marketing team aligned with strategic objectives</li>
+          <li>Managing <strong>performance-based advertising</strong> and growth projects with structured reporting to executive leadership</li>
+          <li>Establishing <strong>SOPs, team workflows</strong>, and project prioritization frameworks for AI-augmented marketing operations</li>
+        </ul>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">Zimi Tech Inc.</div>
+            <div class="timeline-role">Associate Digital Marketing Manager</div>
+          </div>
+          <div class="timeline-date">Aug 2022 — Dec 2025</div>
+        </div>
+        <ul class="timeline-body">
+          <li>Generated <strong>MYR 330,289.46</strong> in sales at MYR 18,150.57 monthly spend — <strong>1819.7% ROAS</strong></li>
+          <li>Managed <strong>$60K+ monthly ad spend</strong> across Meta, TikTok, LinkedIn, and Google Ads, delivering 30-80% ROAS consistently</li>
+          <li>Executed media planning, competitive audits, and QA for clients across e-commerce, finance, real estate, and healthcare verticals</li>
+          <li>Built websites, landing pages, banners, and lead gen campaigns end-to-end</li>
+        </ul>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">Hashtaqs Plt. Ltd. — Singapore</div>
+            <div class="timeline-role">Performance Marketing Specialist</div>
+          </div>
+          <div class="timeline-date">Oct 2021 — Jul 2022</div>
+        </div>
+        <ul class="timeline-body">
+          <li>Developed <strong>omnichannel marketing strategies</strong> integrating online &amp; offline activities for training, branding, and events</li>
+          <li>Executed SEM/SEO, LinkedIn lead gen, and social campaigns for B2B events including <strong>HASH Innovation Asia Summit</strong></li>
+        </ul>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">OHSEM Digital Marketing Solutions</div>
+            <div class="timeline-role">Growth / Digital Marketer (Freelancer)</div>
+          </div>
+          <div class="timeline-date">Oct 2019 — Sep 2021</div>
+        </div>
+        <ul class="timeline-body">
+          <li>Managed <strong>end-to-end digital marketing</strong> for clients: social media, ads, web design, and e-commerce operations</li>
+          <li>Developed and executed lead generation strategies across paid and organic channels</li>
+        </ul>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">RoadTag Technology Sdn Bhd</div>
+            <div class="timeline-role">Digital Marketing Specialist</div>
+          </div>
+          <div class="timeline-date">Jun 2017 — Sep 2019</div>
+        </div>
+        <ul class="timeline-body">
+          <li>Built digital marketing strategy for <strong>TruckTrader Malaysia</strong> online marketplace platform</li>
+          <li>Managed Facebook, Instagram, and YouTube with analytics-driven optimization and reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Results -->
+<section id="results" class="results-section">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">Proven Results</div>
+      <h2 class="section-title">Case Studies &amp; Impact Metrics</h2>
+      <p class="section-desc">Selected metrics from production work across campaigns, infrastructure, and automation.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card reveal">
+        <span class="result-icon">📈</span>
+        <h3 class="green">1819.7% ROAS</h3>
+        <div class="sub">Healthcare &amp; Wellness · MYR 18K/mo spend</div>
+        <p>Generated MYR 330,289.46 in sales from MYR 18,150.57 monthly ad spend with MYR 1,315.89 average order value. Full-funnel optimization from awareness to retargeting.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-icon">💰</span>
+        <h3>$60K+ <span style="color:var(--text-muted);font-weight:400;font-size:0.55em;">/ month</span></h3>
+        <div class="sub">Multi-platform ad spend management</div>
+        <p>Managed cross-platform budgets across Meta, TikTok, LinkedIn, and Google Ads, consistently delivering 30–80% ROAS improvement through AI-powered bid optimization and audience segmentation.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-icon">🤖</span>
+        <h3>15 Production <span style="color:var(--accent-light)">Systems</span></h3>
+        <div class="sub">Production-ready AI agents &amp; workflows</div>
+        <p>Built 15 AI-powered marketing automation systems covering content generation, data intelligence, conversational AI, and agent infrastructure — all deployed in production environments.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-icon">🔗</span>
+        <h3 style="color:var(--orange)">Server-Side Tracking</h3>
+        <div class="sub">Meta CAPI · Google CAPI · Cloud Infrastructure</div>
+        <p>Implemented server-side conversion tracking via AWS and GCP, restoring 30%+ of lost conversion data post-iOS14. Built custom event pipelines for Meta, Google, and LinkedIn CAPI integrations.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-icon">🎯</span>
+        <h3>MYR 1,315<span style="color:var(--text-muted);font-weight:400;">.89</span></h3>
+        <div class="sub">Average Order Value</div>
+        <p>Data-driven funnel optimization increasing AOV through strategic upsells, audience layering, and creative sequencing. Reduced CPA by 40% while maintaining volume.</p>
+      </div>
+      <div class="result-card reveal">
+        <span class="result-icon">🌐</span>
+        <h3>Cross-Channel <span style="color:var(--accent-light)">Delivery</span></h3>
+        <div class="sub">B2B · B2C · E-commerce · SaaS · Healthcare</div>
+        <p>Full-stack execution across the entire marketing technology stack: from pixel infrastructure and CAPI to creative strategy, media buying, AI automation, and performance reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact-section">
+  <div class="inner">
+    <div class="reveal">
+      <div class="section-label">Let's Connect</div>
+      <h2 class="section-title">Available for leadership and senior IC roles</h2>
+      <p class="section-desc">
+        Looking for a Head of Marketing, AI Marketing Architect, or Full-Stack Digital Marketing Lead who can drive results and build systems that scale.
+      </p>
+    </div>
+    <div class="contact-links reveal">
+      <a href="mailto:boonhong.tan0309@gmail.com" class="contact-card">
+        <span class="icon">✉</span>
+        <div>
+          <div class="label">Email</div>
+          <div class="value">boonhong.tan0309@gmail.com</div>
+        </div>
+      </a>
+          <a href="https://linkedin.com/in/boonhongtan" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <span class="icon">💼</span>
+        <div>
+          <div class="label">LinkedIn</div>
+          <div class="value">/in/boonhongtan</div>
+        </div>
+      </a>
+      <a href="tel:+60165505829" class="contact-card">
+        <span class="icon">📞</span>
+        <div>
+          <div class="label">Phone</div>
+          <div class="value">+60 16 550 5829</div>
+        </div>
+      </a>
+          <a href="https://hanson-portfolio.short.gy/2026-ai-style-portfolio" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <span class="icon">🌐</span>
+        <div>
+          <div class="label">Website</div>
+          <div class="value">hanson-portfolio.short.gy</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview" onclick="this.classList.remove('open'); this.setAttribute('aria-hidden', 'true');">
+  <button class="lightbox-close" type="button" aria-label="Close image preview" onclick="event.stopPropagation(); this.closest('.lightbox').classList.remove('open'); this.closest('.lightbox').setAttribute('aria-hidden', 'true');">&times;</button>
+  <img id="lightbox-img" src="" alt="Enlarged screenshot">
+</div>
+
+<footer>
+  &copy; 2026 Hanson Tan Boon Hong — AI-Powered Full-Stack Digital Marketing Specialist
+  <br><span style="font-family:var(--mono);font-size:0.65rem;color:var(--text-dim);">Built with code, AI agents, and performance data.</span>
+</footer>
+
+<script>
+  // Intersection Observer for scroll reveals
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Active nav link tracking
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('nav .links a:not(.nav-cta)');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (window.scrollY >= top) current = section.getAttribute('id');
+    });
+    navItems.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Mobile nav close on click
+  document.querySelectorAll('nav .links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('nav .links').classList.remove('open');
+    });
+  });
+
+  // Lightbox
+  document.querySelectorAll('.img-gallery img').forEach(img => {
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.getElementById('lightbox-img').src = img.src;
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      lightbox.querySelector('.lightbox-close').focus();
+    });
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        img.click();
+      }
+    });
+  });
+
+  // Category filter
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.category-btn').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.category-section').forEach(section => {
+        if (filter === 'all') {
+          section.style.display = 'block';
+        } else {
+          const badge = section.querySelector('.project-category-badge');
+          if (badge) {
+            const isContent = badge.classList.contains('badge-content');
+            const isData = badge.classList.contains('badge-data');
+            const isAgent = badge.classList.contains('badge-agent');
+            const show = (filter === 'content' && isContent) ||
+                         (filter === 'data' && isData) ||
+                         (filter === 'agent' && isAgent);
+            section.style.display = show ? 'block' : 'none';
+          }
+        }
+      });
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox.classList.contains('open')) {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+      }
+    }
+  });
+</script>
+</body>
+</html>
